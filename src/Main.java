@@ -5,9 +5,10 @@ import Models.Gui.MainFrame;
 
 public class Main {
     public static void main(String[] args) {
-        MainFrame window = new MainFrame(400, 400);
-
+        ChatClient client = new inMemoryChatClient();
+        MainFrame window = new MainFrame(400, 400, client);
     }
+
     private static void test(){
         ChatClient client = new inMemoryChatClient();
         client.login("Bruh");
