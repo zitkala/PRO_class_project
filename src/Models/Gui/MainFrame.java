@@ -13,7 +13,7 @@ public class MainFrame extends JFrame {
     private JTextField txtInputName, txtInputMessage;
 
     private JTextArea txtChat;
-    private JButton btnLogin;
+    private JButton btnLogin, btnSend;
     public MainFrame(int width, int height, ChatClient chatClient) {
         super("PRO2 ChatClient");
         setSize(width, height);
@@ -38,6 +38,7 @@ public class MainFrame extends JFrame {
 
     private JPanel initLoginPanel(){
         JPanel panelLogin = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
         panelLogin.add(new JLabel("Username"));
         txtInputName = new JTextField("",30);
         panelLogin.add(txtInputName);
@@ -45,8 +46,7 @@ public class MainFrame extends JFrame {
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Login clicked - " + txtInputName.getText());
-                if (chatClient.isAuthenticated()){
+                 if (chatClient.isAuthenticated()){
                     chatClient.logout();
                     btnLogin.setText("Login");
                     System.out.println("Logout clicked "+ txtInputName.getText());
@@ -60,14 +60,13 @@ public class MainFrame extends JFrame {
                         JOptionPane.showMessageDialog(null,"Enter your user name", "Error", JOptionPane.ERROR_MESSAGE);
                         return;
                     }
-                    chatClient.login(txtInputName.getText());
+                    chatClient.login(name);
                     btnLogin.setText("Logout");
                     System.out.println("Login clicked " + txtInputName.getText());
                     txtInputName.setEditable(false);
                     txtChat.setEnabled(true);
                     txtInputMessage.setEnabled(true);
                 }
-                chatClient.login(txtInputName.getText());
             }
         });
         panelLogin.add(btnLogin);
@@ -79,9 +78,12 @@ public class MainFrame extends JFrame {
         panelChat.setLayout(new BoxLayout(panelChat, BoxLayout.X_AXIS));
         txtChat = new JTextArea();
         txtChat.setEditable(false);
+        txtChat.setEnabled(false);
         JScrollPane scrollPane = new JScrollPane(txtChat);
         panelChat.add(scrollPane);
-
+        chatClient.addActionListenerMessagesChanged(e -> {
+            refreshMessage();
+        });
         return panelChat;
     }
     private JPanel initLoggedUsersPanel(){
@@ -105,24 +107,21 @@ public class MainFrame extends JFrame {
         txtInputMessage = new JTextField("", 50);
         panelMessage.add(txtInputMessage);
         txtInputMessage.setEnabled(false);
-        JButton btnSend = new JButton("Send");
-        btnSend.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String messageText = txtInputMessage.getText();
-                System.out.println("btnSend clicked "+ txtInputMessage.getText());
-                if (messageText.length() < 1){
-                    return;
-                }
-                if (!chatClient.isAuthenticated()){
-                    return;
-                }
-                chatClient.sendMessage(messageText);
-                txtInputMessage.setText("");
-                chatClient.addActionListenerMessagesChanged(e1 -> {
-                    refreshMessage();
-                });
+        btnSend = new JButton("Send");
+        btnSend.addActionListener(e -> {
+            String messageText = txtInputMessage.getText();
+            System.out.println("btnSend clicked "+ txtInputMessage.getText());
+            if (messageText.length() < 1){
+                return;
             }
+            if (!chatClient.isAuthenticated()){
+                return;
+            }
+            chatClient.sendMessage(messageText);
+            txtInputMessage.setText("");
+            chatClient.addActionListenerMessagesChanged(e1 -> {
+                refreshMessage();
+            });
         });
         panelMessage.add(btnSend);
         return panelMessage;

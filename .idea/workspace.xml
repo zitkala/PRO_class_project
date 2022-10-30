@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c21ce4a9-a3f0-459e-a251-c44f97f70fbf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Models/Gui/LoggedUsersTableModel.java" afterDir="false" />
+    <list default="true" id="c21ce4a9-a3f0-459e-a251-c44f97f70fbf" name="Changes" comment="-24/10/2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/ChatClients/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ChatClients/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/ChatClients/inMemoryChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ChatClients/inMemoryChatClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Gui/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +61,14 @@
       <updated>1665391835827</updated>
       <workItem from="1665391838753" duration="4232000" />
     </task>
+    <task id="LOCAL-00001" summary="-24/10/2022">
+      <created>1666606879132</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666606879132</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,5 +84,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="-24/10/2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="-24/10/2022" />
   </component>
 </project>
