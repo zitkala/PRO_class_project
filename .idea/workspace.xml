@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c21ce4a9-a3f0-459e-a251-c44f97f70fbf" name="Changes" comment="-24/10/2022">
+    <list default="true" id="c21ce4a9-a3f0-459e-a251-c44f97f70fbf" name="Changes" comment="fixed problems from 24/10/2022">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/ChatClients/ChatFileOperation/ChatFileOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/ChatClients/ChatFileOperation/JsonChatFileOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/ChatClients/ChatFileOperation/ToFileChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Gui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PRO_class_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PRO_class_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/ChatClients/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/ChatClients/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/ChatClients/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/ChatClients/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/ChatClients/inMemoryChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/ChatClients/inMemoryChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Gui/LoggedUsersTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Gui/LoggedUsersTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Gui/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,13 +48,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -68,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666606879132</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed problems from 24/10/2022">
+      <created>1667141627707</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667141627708</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,6 +116,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-24/10/2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="-24/10/2022" />
+    <MESSAGE value="fixed problems from 24/10/2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed problems from 24/10/2022" />
   </component>
 </project>
