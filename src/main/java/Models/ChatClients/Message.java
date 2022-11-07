@@ -10,7 +10,7 @@ public class Message {
     private String author;
     @Expose(serialize = true, deserialize = true)
     private String text;
-    @Expose(serialize = false, deserialize = false)
+    @Expose(serialize = true, deserialize = true)
     private LocalDateTime time;
 
     public static final int USER_LOGGED_IN = 1;
@@ -50,8 +50,8 @@ public class Message {
         if (author.equals(AUTHOR_SYSTEM)){
             return text;
         }
-        String tempText = author + " [" + time+"]\nl";
-        tempText += text+"\nl";
+        String tempText = author + " [" + time+"]\n";
+        tempText += text+"\n";
         return tempText;
     }
 }

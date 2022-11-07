@@ -2,12 +2,18 @@ import Models.ChatClients.ChatClient;
 import Models.ChatClients.ChatFileOperation.ChatFileOperations;
 import Models.ChatClients.ChatFileOperation.JsonChatFileOperations;
 import Models.ChatClients.ChatFileOperation.ToFileChatClient;
+import Models.ChatClients.Database.DbInitializer;
 import Models.ChatClients.Message;
 import Models.ChatClients.inMemoryChatClient;
 import Models.Gui.MainFrame;
 
 public class Main {
     public static void main(String[] args) {
+        String databaseDriver = "org.apache.derby.jdbc.EmbeddedDriver";
+        String databaseUrl = "jdbc:derby:ChatClientDb_skA";
+
+        DbInitializer dbInitializer = new DbInitializer(databaseDriver,databaseUrl);
+        dbInitializer.Init();
         ChatFileOperations chatFileOperations = new JsonChatFileOperations();
         ChatClient client = new ToFileChatClient(chatFileOperations);
         //ChatClient client = new inMemoryChatClient();

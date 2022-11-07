@@ -1,8 +1,7 @@
 package Models.ChatClients.ChatFileOperation;
 
 import Models.ChatClients.Message;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
@@ -10,6 +9,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,10 @@ public class JsonChatFileOperations implements ChatFileOperations{
     private Gson gson;
     private static final String MESSAGES_FILE = "./messages.json";
     public JsonChatFileOperations(){
-        gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+        GsonBuilder gsonBuilder = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting();
+        gsonBuilder.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeSerializer());
+        gsonBuilder.registerTypeAdapter(LocalDateTime.class, new LocalDateTimeDeserializer());
+        gson = gsonBuilder.create();
     }
     @Override
     public List<Message> loadMessages() {
@@ -61,5 +65,19 @@ public class JsonChatFileOperations implements ChatFileOperations{
     @Override
     public void writeLoggedUsers(List<String> users) {
 
+    }
+}
+class LocalDateTimeSerializer implements JsonSerializer<LocalDateTime>{
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss");
+    @Override
+    public JsonElement serialize(LocalDateTime localDateTime, Type srcType, JsonSerializationContext context){
+        return new JsonPrimitive(formatter.format(localDateTime));
+    }
+
+}
+class LocalDateTimeDeserializer implements JsonDeserializer<LocalDateTime>{
+    @Override
+    public LocalDateTime deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+        return LocalDateTime.parse(jsonElement.getAsString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH-mm-ss"));
     }
 }
